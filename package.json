@@ -1,0 +1,26 @@
+{
+  "name": "phoenix-dispatch",
+  "version": "0.0.0",
+  "description": "API for Phoenix Dispatch Data",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iceddev/phoenix-dispatch"
+  },
+  "author": "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iceddev/phoenix-dispatch/issues"
+  },
+  "homepage": "https://github.com/iceddev/phoenix-dispatch",
+  "dependencies": {
+    "cheerio": "^0.13.1",
+    "hapi": "^2.6.0",
+    "rest": "^1.0.2",
+    "lodash": "^2.4.1"
+  }
+}
