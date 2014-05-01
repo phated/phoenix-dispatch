@@ -41,10 +41,12 @@
           .done(function(results){
             console.log(results);
             _.forEach(results, function(location){
-              var marker = L.marker(location.latlong);
-              marker.bindPopup(tmpl(location));
-              marker.addTo(map);
-            })
+              if(location.latlong[0] && location.latlong[1]){
+                var marker = L.marker(location.latlong);
+                marker.bindPopup(tmpl(location));
+                marker.addTo(map);
+              }
+            });
           });
       });
     </script>
