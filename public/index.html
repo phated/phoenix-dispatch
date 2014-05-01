@@ -41,7 +41,11 @@
         $.getJSON('/')
           .done(function(results){
             console.log(results)
-            L.geoJson(results).addTo(map)
+            L.geoJson(results, {
+              onEachFeature: function (feature, layer) {
+                layer.bindPopup(tmpl(feature.properties));
+              }
+            }).addTo(map)
           });
       });
     </script>
