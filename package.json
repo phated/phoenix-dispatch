@@ -19,8 +19,9 @@
   "homepage": "https://github.com/iceddev/phoenix-dispatch",
   "dependencies": {
     "cheerio": "^0.13.1",
-    "hapi": "^2.6.0",
+    "hapi": "^4.0.0",
     "rest": "^1.0.2",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "when": "^3.1.0"
   }
 }
