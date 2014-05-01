@@ -2,6 +2,7 @@
 
 var scrape = require('./lib/scrape');
 var geocode = require('./lib/geocode');
+var geojsonify = require('./lib/geojsonify');
 
 var Hapi = require('hapi');
 
@@ -18,6 +19,7 @@ server.route({
   handler: function(request, reply){
     scrape()
       .then(geocode)
+      .then(geojsonify)
       .then(reply)
       .otherwise(reply);
   }

@@ -37,16 +37,11 @@
           zoom: 12
         });
         map.addLayer(new L.StamenTileLayer(layer));
+
         $.getJSON('/')
           .done(function(results){
-            console.log(results);
-            _.forEach(results, function(location){
-              if(location.latlong[0] && location.latlong[1]){
-                var marker = L.marker(location.latlong);
-                marker.bindPopup(tmpl(location));
-                marker.addTo(map);
-              }
-            });
+            console.log(results)
+            L.geoJson(results).addTo(map)
           });
       });
     </script>
