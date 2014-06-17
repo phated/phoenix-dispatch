@@ -8,6 +8,12 @@ function initial(idx){
   return idx !== 0 && idx !== 1; // ignore first and second element
 }
 
+var cities = {
+  TMP: 'Tempe',
+  SCT: 'Scottsdale',
+  PHX: 'Phoenix'
+};
+
 var scrape = interceptor({
   success: function(body){
     var $ = cheerio.load(body);
@@ -29,11 +35,14 @@ var scrape = interceptor({
         };
       });
 
+      var cityAbbr = locationParts[1];
+      var city = cities[cityAbbr];
+
       var out = {
         channel: $cells.eq(0).text(),
         location: location,
         address: locationParts[0],
-        city: locationParts[1],
+        city: city || cityAbbr,
         nature: $cells.eq(2).text(),
         units: units
       };
