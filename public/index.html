@@ -38,7 +38,7 @@
         });
         map.addLayer(new L.StamenTileLayer(layer));
 
-        $.getJSON('/')
+        $.getJSON('/incidents')
           .done(function(results){
             console.log(results)
             L.geoJson(results, {

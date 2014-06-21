@@ -16,6 +16,14 @@ var server = new Hapi.Server('0.0.0.0', 3000, {
 server.route({
   method: 'GET',
   path: '/',
+  handler: {
+    file: __dirname + '/public/index.html'
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/incidents',
   handler: function(request, reply){
     scrape()
       .then(geocode)
