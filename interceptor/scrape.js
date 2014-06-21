@@ -11,7 +11,10 @@ function initial(idx){
 var cities = {
   TMP: 'Tempe',
   SCT: 'Scottsdale',
-  PHX: 'Phoenix'
+  PHX: 'Phoenix',
+  BUV: 'Buckeye',
+  GDY: 'Goodyear',
+  GLN: 'Glendale'
 };
 
 var scrape = interceptor({
@@ -38,10 +41,12 @@ var scrape = interceptor({
       var cityAbbr = locationParts[1];
       var city = cities[cityAbbr];
 
+      var address = locationParts[0].replace('/', ' and ');
+
       var out = {
         channel: $cells.eq(0).text(),
         location: location,
-        address: locationParts[0],
+        address: address,
         city: city || cityAbbr,
         nature: $cells.eq(2).text(),
         units: units
